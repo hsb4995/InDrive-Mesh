@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.slidingpanelayout:slidingpanelayout:1.2.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/Documents/sample2/bridgefy-android-sdk-sample-master/caches/transforms-2/files-2.1/ca47f1e5edd678f712b23ac02188f183/slidingpanelayout-1.2.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/sample2/bridgefy-android-sdk-sample-master/caches/transforms-2/files-2.1/ca47f1e5edd678f712b23ac02188f183/slidingpanelayout-1.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Documents/sample2/bridgefy-android-sdk-sample-master/caches/transforms-2/files-2.1/ca47f1e5edd678f712b23ac02188f183/slidingpanelayout-1.2.0/res" />
+      <root url="file://$USER_HOME$/Documents/sample2/bridgefy-android-sdk-sample-master/caches/transforms-2/files-2.1/ca47f1e5edd678f712b23ac02188f183/slidingpanelayout-1.2.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Documents/sample2/bridgefy-android-sdk-sample-master/caches/modules-2/files-2.1/androidx.slidingpanelayout/slidingpanelayout/1.2.0/6cdf3fd538b995c58d602da7114a92fdeeff92ac/slidingpanelayout-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
