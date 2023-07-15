@@ -142,11 +142,6 @@ public class PairingFragment extends Fragment {
             public void onConnectionFailed(Peer peer, int errorCode) {
                 super.onConnectionFailed(peer, errorCode);
                 if (connectingPeer != null) {
-                    if (connectionTimer != null && !connectionTimer.isFinished() && errorCode != BluetoothCommunicator.CONNECTION_REJECTED) {
-                        // the timer has not expired and the connection has not been refused, so we try again
-//                        global.setAmIConnecting(true);
-                        activity.connect(peer);
-                    } else {
                         // the timer has expired, so the failure is notified
                         clearFoundPeers();
                         startSearch();
@@ -160,7 +155,7 @@ public class PairingFragment extends Fragment {
                             Toast.makeText(activity, "Connection error", Toast.LENGTH_SHORT).show();
 
                         }
-                    }
+
                 }
             }
 
