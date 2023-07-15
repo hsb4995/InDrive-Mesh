@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.gui;
+package com.bluetooth.indrivemesh.gui;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -23,7 +23,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.bluetooth.communicatorexample.R;
+import com.bluetooth.indrivemesh.R;
 import com.bluetooth.communicator.Peer;
 
 import java.util.ArrayList;

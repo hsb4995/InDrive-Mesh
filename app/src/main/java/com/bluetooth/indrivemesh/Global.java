@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample;
+package com.bluetooth.indrivemesh;
 
 import android.app.Application;
 import android.provider.Settings;

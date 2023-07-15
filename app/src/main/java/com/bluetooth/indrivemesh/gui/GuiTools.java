@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.gui;
+package com.bluetooth.indrivemesh.gui;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

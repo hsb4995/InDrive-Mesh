@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.fragments;
+package com.bluetooth.indrivemesh.fragments;
 
 import android.animation.Animator;
 import android.bluetooth.BluetoothAdapter;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,15 +38,15 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.bluetooth.communicator.tools.Timer;
-import com.bluetooth.communicatorexample.Global;
-import com.bluetooth.communicatorexample.MainActivity;
-import com.bluetooth.communicatorexample.R;
-import com.bluetooth.communicatorexample.gui.ButtonSearch;
-import com.bluetooth.communicatorexample.gui.CustomAnimator;
-import com.bluetooth.communicatorexample.gui.GuiTools;
-import com.bluetooth.communicatorexample.gui.PeerListAdapter;
-import com.bluetooth.communicatorexample.gui.RequestDialog;
-import com.bluetooth.communicatorexample.tools.Tools;
+import com.bluetooth.indrivemesh.Global;
+import com.bluetooth.indrivemesh.MainActivity;
+import com.bluetooth.indrivemesh.R;
+import com.bluetooth.indrivemesh.gui.ButtonSearch;
+import com.bluetooth.indrivemesh.gui.CustomAnimator;
+import com.bluetooth.indrivemesh.gui.GuiTools;
+import com.bluetooth.indrivemesh.gui.PeerListAdapter;
+import com.bluetooth.indrivemesh.gui.RequestDialog;
+import com.bluetooth.indrivemesh.tools.Tools;
 import com.bluetooth.communicator.BluetoothCommunicator;
 import com.bluetooth.communicator.Peer;
 
@@ -178,6 +175,7 @@ public class PairingFragment extends Fragment {
                         Log.i("My device name", bluetoothAdapter.getName());
                         if (index == -1) {
                             listView.add(peer);
+
                             // Need to check when multi peers are available
                             // Delay such that only one peer initiates
 //                            if (peer.getUniqueName().equalsIgnoreCase(bluetoothAdapter.getName())) {
@@ -195,20 +193,20 @@ public class PairingFragment extends Fragment {
 //                                connect(peer);
 //                                Log.i("Trying to connect with Peer", peer.getUniqueName());
 //                            }
-//                            Random rd = new Random();
-//                                if(rd.nextBoolean()) {
-//                                    new Handler().postDelayed(new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            connect(peer);
-//                                            Log.i("Trying to connect with Peer", peer.getUniqueName());
-//                                        }
-//                                    }, 3000);
-//                                } else {
-//                                    connect(peer);
-//                                    Log.i("Trying to connect with Peer", peer.getUniqueName());
-//
-//                                }
+                            Random rd = new Random();
+                                if(rd.nextBoolean()) {
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            connect(peer);
+                                            Log.i("Trying to connect with Peer", peer.getUniqueName());
+                                        }
+                                    }, 3000);
+                                } else {
+                                    connect(peer);
+                                    Log.i("Trying to connect with Peer", peer.getUniqueName());
+
+                                }
                         } else {
                             Peer peer1 = listView.get(index);
                             if (peer.isBonded(bluetoothAdapter)) {

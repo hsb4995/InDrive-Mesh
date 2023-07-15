@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.gui;
+package com.bluetooth.indrivemesh.gui;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -28,7 +28,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 
 import java.util.ArrayList;
 
-import com.bluetooth.communicatorexample.R;
+import com.bluetooth.indrivemesh.R;
 
 public class ButtonSearch extends AppCompatImageButton {
     private boolean searching = true;

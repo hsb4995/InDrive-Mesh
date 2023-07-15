@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bluetooth.communicatorexample" >
+    package="com.bluetooth.indrivemesh" >
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".Global"
+        android:name="com.bluetooth.indrivemesh.Global"
         android:allowBackup="true"
         android:icon="@mipmap/mesh_launcher_main"
         android:label="@string/app_name"
@@ -19,13 +19,13 @@
         android:theme="@style/Theme.Speech" >
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.bluetooth.indrivemesh.MainActivity"
             android:configChanges="orientation|screenSize" >
         </activity>
-        <activity android:name=".IntroActivity2" />
-        <activity android:name=".IntroActivity3" />
-        <activity android:name=".IntroActivity4" />
-        <activity android:name=".IntroActivity5" android:configChanges="orientation|screenSize" >
+        <activity android:name="com.bluetooth.indrivemesh.IntroActivity2" />
+        <activity android:name="com.bluetooth.indrivemesh.IntroActivity3" />
+        <activity android:name="com.bluetooth.indrivemesh.IntroActivity4" />
+        <activity android:name="com.bluetooth.indrivemesh.IntroActivity5" android:configChanges="orientation|screenSize" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +33,7 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".IntroActivity" />
+            android:name="com.bluetooth.indrivemesh.IntroActivity" />
     </application>
 
 </manifest>

@@ -1,12 +1,10 @@
-package com.bluetooth.communicatorexample;
+package com.bluetooth.indrivemesh;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class LocationTracker {

@@ -1,4 +1,4 @@
-package com.bluetooth.communicatorexample;
+package com.bluetooth.indrivemesh;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,22 +7,22 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class IntroActivity4 extends AppCompatActivity {
+public class IntroActivity3 extends AppCompatActivity {
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.intro_activity4);
+        setContentView(R.layout.intro_activity3);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openactivity5();
+                openactivity4();
             }
         });
     }
-    public void openactivity5(){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openactivity4(){
+        Intent intent = new Intent(this, IntroActivity4.class);
         startActivity(intent);
     }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.gui;
+package com.bluetooth.indrivemesh.gui;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -28,7 +28,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-import com.bluetooth.communicatorexample.R;
+import com.bluetooth.indrivemesh.R;
 
 public class CustomAnimator {
 

@@ -1,4 +1,4 @@
-package com.bluetooth.communicatorexample;
+package com.bluetooth.indrivemesh;
 
 import android.content.Context;
 

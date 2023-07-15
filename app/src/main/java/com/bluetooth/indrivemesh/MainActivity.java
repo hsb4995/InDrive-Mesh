@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample;
+package com.bluetooth.indrivemesh;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,21 +26,19 @@ import androidx.fragment.app.FragmentTransaction;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bluetooth.communicatorexample.fragments.ConversationFragment;
-import com.bluetooth.communicatorexample.fragments.PairingFragment;
-import com.bluetooth.communicatorexample.tools.Tools;
+import com.bluetooth.indrivemesh.fragments.ConversationFragment;
+import com.bluetooth.indrivemesh.fragments.PairingFragment;
+import com.bluetooth.indrivemesh.tools.Tools;
 import com.bluetooth.communicator.BluetoothCommunicator;
 import com.bluetooth.communicator.Peer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static final int PAIRING_FRAGMENT = 0;

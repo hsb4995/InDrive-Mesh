@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.tools;
+package com.bluetooth.indrivemesh.tools;
 
 import android.os.Handler;
 import android.os.Looper;

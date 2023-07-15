@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.fragments;
+package com.bluetooth.indrivemesh.fragments;
 
 
 import android.animation.Animator;
@@ -38,13 +38,13 @@ import androidx.annotation.Nullable;
 import com.bluetooth.communicator.BluetoothCommunicator;
 import com.bluetooth.communicator.Message;
 import com.bluetooth.communicator.Peer;
-import com.bluetooth.communicatorexample.Global;
-import com.bluetooth.communicatorexample.LocationTracker;
-import com.bluetooth.communicatorexample.MainActivity;
-import com.bluetooth.communicatorexample.R;
-import com.bluetooth.communicatorexample.gui.CustomAnimator;
-import com.bluetooth.communicatorexample.gui.GuiTools;
-import com.bluetooth.communicatorexample.gui.MessagesAdapter;
+import com.bluetooth.indrivemesh.Global;
+import com.bluetooth.indrivemesh.LocationTracker;
+import com.bluetooth.indrivemesh.MainActivity;
+import com.bluetooth.indrivemesh.R;
+import com.bluetooth.indrivemesh.gui.CustomAnimator;
+import com.bluetooth.indrivemesh.gui.GuiTools;
+import com.bluetooth.indrivemesh.gui.MessagesAdapter;
 
 
 import androidx.appcompat.widget.AppCompatImageButton;
@@ -172,7 +172,7 @@ public class ConversationFragment extends Fragment {
                 }
                 Message message = new Message(global, "m", messageText, global.getBluetoothCommunicator().getConnectedPeersList().get(0));
                 global.getBluetoothCommunicator().sendMessage(message);
-                global.setIsSOS(false);
+
             }
 
         });

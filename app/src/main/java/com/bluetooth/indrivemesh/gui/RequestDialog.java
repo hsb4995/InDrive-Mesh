@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bluetooth.communicatorexample.gui;
+package com.bluetooth.indrivemesh.gui;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -23,8 +23,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.bluetooth.communicatorexample.R;
-import com.bluetooth.communicatorexample.tools.Timer;
+import com.bluetooth.indrivemesh.R;
+import com.bluetooth.indrivemesh.tools.Timer;
 
 public class RequestDialog {
     private final int SHOW_TIMER_SECONDS = 5;
