@@ -111,6 +111,7 @@ public class PairingFragment extends Fragment {
                 if (peer != null) {
                     String time = DateFormat.getDateTimeInstance().format(new Date());
                     activity.acceptConnection(peer);
+
 //                    connectionRequestDialog = new RequestDialog(activity, "Accept connection request from " + peer.getName() + " ?", 15000, new DialogInterface.OnClickListener() {
 //                        @Override
 //                        public void onClick(DialogInterface dialog, int which) {
@@ -146,7 +147,7 @@ public class PairingFragment extends Fragment {
                 if (connectingPeer != null) {
                     if (connectionTimer != null && !connectionTimer.isFinished() && errorCode != BluetoothCommunicator.CONNECTION_REJECTED) {
                         // the timer has not expired and the connection has not been refused, so we try again
-                        global.setAmIConnecting(true);
+//                        global.setAmIConnecting(true);
                         activity.connect(peer);
                     } else {
                         // the timer has expired, so the failure is notified
@@ -155,11 +156,12 @@ public class PairingFragment extends Fragment {
                         activateInputs();
                         disappearLoading(true, null);
                         connectingPeer = null;
-                        global.setAmIConnecting(false);
+//                        global.setAmIConnecting(false);
                         if (errorCode == BluetoothCommunicator.CONNECTION_REJECTED) {
                             Toast.makeText(activity, peer.getName() + " refused the connection request", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(activity, "Connection error", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 }
@@ -173,23 +175,40 @@ public class PairingFragment extends Fragment {
                         BluetoothAdapter bluetoothAdapter = global.getBluetoothCommunicator().getBluetoothAdapter();
                         int index = listView.indexOfPeer(peer.getUniqueName());
                         Log.i("Peer name", peer.getUniqueName());
+                        Log.i("My device name", bluetoothAdapter.getName());
                         if (index == -1) {
                             listView.add(peer);
                             // Need to check when multi peers are available
                             // Delay such that only one peer initiates
-                            Random rd = new Random();
-                            if(rd.nextBoolean()) {
-                                if(rd.nextBoolean()) {
-                                    new Handler().postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            connect(peer);
-                                        }
-                                    }, 3000);
-                                } else {
-                                    connect(peer);
-                                }
-                            }
+//                            if (peer.getUniqueName().equalsIgnoreCase(bluetoothAdapter.getName())) {
+//                                Random rd = new Random();
+//                                if(rd.nextBoolean()) {
+//                                    String myType = bluetoothAdapter.getName();
+//                                    Log.i("Switching My Peer Type",myType );
+//                                    if(myType.equalsIgnoreCase("X")){
+//                                        bluetoothAdapter.setName("Y");
+//                                    } else {
+//                                        bluetoothAdapter.setName("X");
+//                                    }
+//                                }
+//                            } else {
+//                                connect(peer);
+//                                Log.i("Trying to connect with Peer", peer.getUniqueName());
+//                            }
+//                            Random rd = new Random();
+//                                if(rd.nextBoolean()) {
+//                                    new Handler().postDelayed(new Runnable() {
+//                                        @Override
+//                                        public void run() {
+//                                            connect(peer);
+//                                            Log.i("Trying to connect with Peer", peer.getUniqueName());
+//                                        }
+//                                    }, 3000);
+//                                } else {
+//                                    connect(peer);
+//                                    Log.i("Trying to connect with Peer", peer.getUniqueName());
+//
+//                                }
                         } else {
                             Peer peer1 = listView.get(index);
                             if (peer.isBonded(bluetoothAdapter)) {

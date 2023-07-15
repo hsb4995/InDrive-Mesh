@@ -13,25 +13,25 @@
         android:layout_alignStart="@+id/textView8"
         android:layout_alignEnd="@+id/textView8"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-22dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="-11dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/noto_sans_bold"
         android:text="Network of Phones"
         android:textColor="#000000"
-        android:textSize="40sp" />
+        android:gravity="center"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="350dp"
-        android:layout_height="92dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/noto_sans_bold"
-        android:text="Send encrypted messages to nearby users using direct peer-to-peer wireless connection."
+        android:gravity="center"
+        android:text="Send encrypted node info to nearby users using direct peer-to-peer wireless connection"
         android:textSize="15sp" />
 
     <Button
@@ -47,54 +47,36 @@
         android:textColor="#000000"
         android:textSize="15dp" />
 
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView11"
         android:layout_width="match_parent"
-        android:layout_height="446dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginBottom="102dp"
-        app:srcCompat="@drawable/city2" />
+        android:layout_height="533dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/carpool" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView8"
-        android:layout_alignBottom="@+id/imageView5"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="1dp"
-        android:layout_toStartOf="@+id/imageView5"
-        app:srcCompat="@drawable/person1" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="126dp"
-        android:layout_height="421dp"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="136dp"
-        app:srcCompat="@drawable/person2" />
+        android:gravity="center"
+        android:layout_below="@+id/imageView11"
+        android:text="" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView4"
+        android:layout_below="@+id/imageView11"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginBottom="15dp"
-        android:text="Team AlphaOmega" />
+        android:layout_marginStart="8dp"
+        android:layout_alignParentBottom= "true"
+        android:layout_marginBottom="13dp"
+        android:gravity="bottom|left"
+        android:text="Team AlphaOmega"
+        android:visibility="visible" />
 
 
 </RelativeLayout>

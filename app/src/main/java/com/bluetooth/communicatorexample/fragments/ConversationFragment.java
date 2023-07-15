@@ -165,9 +165,14 @@ public class ConversationFragment extends Fragment {
                 // Got location updates
                 // Send Message
                 String nodeId = global.getNodeId();
+                Boolean isSOS = global.getIsSOS();
                 String messageText = "Node: "+ nodeId+ " Location- Latitude: "+ latt + " Longitude: "+ longg;
+                if(isSOS) {
+                    messageText = "Priority Message "+ messageText;
+                }
                 Message message = new Message(global, "m", messageText, global.getBluetoothCommunicator().getConnectedPeersList().get(0));
                 global.getBluetoothCommunicator().sendMessage(message);
+                global.setIsSOS(false);
             }
 
         });

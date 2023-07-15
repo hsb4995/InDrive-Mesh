@@ -27,7 +27,10 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bluetooth.communicatorexample.fragments.ConversationFragment;
 import com.bluetooth.communicatorexample.fragments.PairingFragment;
@@ -37,6 +40,7 @@ import com.bluetooth.communicator.Peer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static final int PAIRING_FRAGMENT = 0;
@@ -83,7 +87,15 @@ public class MainActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         fragmentContainer = findViewById(R.id.fragment_container);
-        amIConnecting = global.getAmIConnecting();
+
+        ImageView imageView = findViewById(R.id.imageView9);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "SOS in queue", Toast.LENGTH_SHORT).show();
+                global.setIsSOS(true);
+            }
+        });
         global.getBluetoothCommunicator().addCallback(new BluetoothCommunicator.Callback() {
             @Override
             public void onAdvertiseStarted() {
@@ -117,6 +129,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+//        Random rd = new Random();
+//        if(rd.nextBoolean()) {
+//            global.getBluetoothCommunicator().getBluetoothAdapter().setName("X");
+//            Log.i("My Peer Type","X");
+//        } else {
+//            global.getBluetoothCommunicator().getBluetoothAdapter().setName("Y");
+//            Log.i("My Peer Type","Y");
+//        }
+
     }
 
     @Override
@@ -270,14 +291,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void connect(Peer peer) {
         stopSearch(false);
-        amIConnecting = true;
-        global.setAmIConnecting(amIConnecting);
+        Log.i("Calling BLE connect", peer.getUniqueName());
+//        amIConnecting = true;
+//        global.setAmIConnecting(amIConnecting);
         global.getBluetoothCommunicator().connect(peer);
     }
 
     public void acceptConnection(Peer peer) {
-        if (!global.getAmIConnecting())
-        global.getBluetoothCommunicator().acceptConnection(peer);
+//        if (!global.getAmIConnecting())
+            global.getBluetoothCommunicator().acceptConnection(peer);
     }
 
     public void rejectConnection(Peer peer) {

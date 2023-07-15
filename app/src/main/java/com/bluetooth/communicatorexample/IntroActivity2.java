@@ -18,7 +18,7 @@ public class IntroActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_activity2);
 
-        TextView textView =  findViewById(R.id.textView8);
+        TextView textView =  findViewById(R.id.textView10);
         String android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
         textView.setText("Your Node Id is :" + android_id);

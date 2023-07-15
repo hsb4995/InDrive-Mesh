@@ -29,7 +29,7 @@ public class Global extends Application {
     private BluetoothCommunicator bluetoothCommunicator;
     private String nodeId;
 
-    private Boolean amIConnecting = false;
+    private Boolean isSOS = false;
 
     @Override
     public void onCreate() {
@@ -58,7 +58,7 @@ public class Global extends Application {
 
     public String getNodeId() {return nodeId;}
 
-    public Boolean getAmIConnecting() {return amIConnecting;}
+    public Boolean getIsSOS() {return isSOS;}
 
-    public void setAmIConnecting(Boolean val) {amIConnecting =val; }
+    public void setIsSOS(Boolean val) {isSOS =val; }
 }

@@ -24,7 +24,7 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="17dp"
         android:layout_weight="1.5"
@@ -50,10 +50,20 @@
             android:id="@+id/imageView8"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_above="@+id/textView6"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/testmap2" />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            app:srcCompat="@drawable/secure_sos" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
