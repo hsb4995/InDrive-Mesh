@@ -109,24 +109,6 @@ public class PairingFragment extends Fragment {
                     String time = DateFormat.getDateTimeInstance().format(new Date());
                     activity.acceptConnection(peer);
 
-//                    connectionRequestDialog = new RequestDialog(activity, "Accept connection request from " + peer.getName() + " ?", 15000, new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            activity.acceptConnection(peer);
-//                        }
-//                    }, new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            activity.rejectConnection(peer);
-//                        }
-//                    });
-//                    connectionRequestDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//                        @Override
-//                        public void onCancel(DialogInterface dialog) {
-//                            connectionRequestDialog = null;
-//                        }
-//                    });
-//                    connectionRequestDialog.show();
                 }
             }
 
@@ -171,23 +153,6 @@ public class PairingFragment extends Fragment {
                         if (index == -1) {
                             listView.add(peer);
 
-                            // Need to check when multi peers are available
-                            // Delay such that only one peer initiates
-//                            if (peer.getUniqueName().equalsIgnoreCase(bluetoothAdapter.getName())) {
-//                                Random rd = new Random();
-//                                if(rd.nextBoolean()) {
-//                                    String myType = bluetoothAdapter.getName();
-//                                    Log.i("Switching My Peer Type",myType );
-//                                    if(myType.equalsIgnoreCase("X")){
-//                                        bluetoothAdapter.setName("Y");
-//                                    } else {
-//                                        bluetoothAdapter.setName("X");
-//                                    }
-//                                }
-//                            } else {
-//                                connect(peer);
-//                                Log.i("Trying to connect with Peer", peer.getUniqueName());
-//                            }
                             Random rd = new Random();
                                 if(rd.nextBoolean()) {
                                     new Handler().postDelayed(new Runnable() {
@@ -378,23 +343,6 @@ public class PairingFragment extends Fragment {
         connectingPeer = peer;
         confirmConnectionPeer = peer;
         activity.connect(peer);
-//        connectionConfirmDialog = new RequestDialog(activity, "Are you sure to connect with " + peer.getName() + "?", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                deactivateInputs();
-//                appearLoading(null);
-//                activity.connect(peer);
-//                startConnectionTimer();
-//            }
-//        }, null);
-//        connectionConfirmDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//            @Override
-//            public void onCancel(DialogInterface dialog) {
-//                confirmConnectionPeer = null;
-//                connectionConfirmDialog = null;
-//            }
-//        });
-//        connectionConfirmDialog.show();
     }
 
     protected void startSearch() {

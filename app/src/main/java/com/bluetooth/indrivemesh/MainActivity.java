@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void showConfirmExitDialog(DialogInterface.OnClickListener confirmListener) {
-        //creazione del dialog.
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setMessage("Confirm exit");
