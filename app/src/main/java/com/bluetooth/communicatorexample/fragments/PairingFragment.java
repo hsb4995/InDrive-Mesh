@@ -22,6 +22,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -144,6 +146,7 @@ public class PairingFragment extends Fragment {
                 if (connectingPeer != null) {
                     if (connectionTimer != null && !connectionTimer.isFinished() && errorCode != BluetoothCommunicator.CONNECTION_REJECTED) {
                         // the timer has not expired and the connection has not been refused, so we try again
+                        global.setAmIConnecting(true);
                         activity.connect(peer);
                     } else {
                         // the timer has expired, so the failure is notified
@@ -152,6 +155,7 @@ public class PairingFragment extends Fragment {
                         activateInputs();
                         disappearLoading(true, null);
                         connectingPeer = null;
+                        global.setAmIConnecting(false);
                         if (errorCode == BluetoothCommunicator.CONNECTION_REJECTED) {
                             Toast.makeText(activity, peer.getName() + " refused the connection request", Toast.LENGTH_SHORT).show();
                         } else {
@@ -168,6 +172,7 @@ public class PairingFragment extends Fragment {
                     if (listView != null) {
                         BluetoothAdapter bluetoothAdapter = global.getBluetoothCommunicator().getBluetoothAdapter();
                         int index = listView.indexOfPeer(peer.getUniqueName());
+                        Log.i("Peer name", peer.getUniqueName());
                         if (index == -1) {
                             listView.add(peer);
                             // Need to check when multi peers are available

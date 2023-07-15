@@ -11,22 +11,29 @@
     <application
         android:name=".Global"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/mesh_launcher_main"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/mesh_launcher_main_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Speech" >
 
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".IntroActivity2" />
+        <activity android:name=".IntroActivity3" />
+        <activity android:name=".IntroActivity4" />
+        <activity android:name=".IntroActivity5" android:configChanges="orientation|screenSize" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntroActivity" />
     </application>
 
 </manifest>

@@ -149,7 +149,7 @@ public class ConversationFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         activity = (MainActivity) requireActivity();
@@ -164,8 +164,9 @@ public class ConversationFragment extends Fragment {
             public void onUpdate(double latt, double longg){
                 // Got location updates
                 // Send Message
-                String locationTxt = "Lat: "+ latt+" Long: "+ longg;
-                Message message = new Message(global, "m", locationTxt, global.getBluetoothCommunicator().getConnectedPeersList().get(0));
+                String nodeId = global.getNodeId();
+                String messageText = "Node: "+ nodeId+ " Location- Latitude: "+ latt + " Longitude: "+ longg;
+                Message message = new Message(global, "m", messageText, global.getBluetoothCommunicator().getConnectedPeersList().get(0));
                 global.getBluetoothCommunicator().sendMessage(message);
             }
 

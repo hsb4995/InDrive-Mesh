@@ -17,6 +17,7 @@
 package com.bluetooth.communicatorexample;
 
 import android.app.Application;
+import android.provider.Settings;
 
 import com.bluetooth.communicator.BluetoothCommunicator;
 import com.bluetooth.communicator.tools.BluetoothTools;
@@ -26,6 +27,9 @@ import java.util.Random;
 
 public class Global extends Application {
     private BluetoothCommunicator bluetoothCommunicator;
+    private String nodeId;
+
+    private Boolean amIConnecting = false;
 
     @Override
     public void onCreate() {
@@ -44,9 +48,17 @@ public class Global extends Application {
         }
 
         bluetoothCommunicator = new BluetoothCommunicator(this, name, BluetoothCommunicator.STRATEGY_P2P_WITH_RECONNECTION);
+        nodeId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID);
     }
 
     public BluetoothCommunicator getBluetoothCommunicator() {
         return bluetoothCommunicator;
     }
+
+    public String getNodeId() {return nodeId;}
+
+    public Boolean getAmIConnecting() {return amIConnecting;}
+
+    public void setAmIConnecting(Boolean val) {amIConnecting =val; }
 }
